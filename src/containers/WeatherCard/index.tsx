@@ -1,10 +1,10 @@
-/* eslint-disable no-mixed-operators */
 import { FC, useState } from 'react';
 import { unix } from 'dayjs';
 import { WeatherIcon } from 'weather-react-icons';
 
 import { useLocation } from '../../providers/LocationProvider';
 import { ForecastItem } from '../../components/ForecastItem';
+import { celciusToFahrenheit } from '../../util';
 
 export const WeatherCard: FC = () => {
   const [{ currentWeather, forecasts }] = useLocation();
@@ -65,7 +65,7 @@ export const WeatherCard: FC = () => {
             >
               {degreeType === 'celcius'
                 ? currentWeather.temp
-                : (currentWeather.temp * 9) / 5 + 32}
+                : celciusToFahrenheit(currentWeather.temp * 9)}
               {degreeType === 'celcius' ? (
                 <sup>&#8451;</sup>
               ) : (
@@ -79,7 +79,7 @@ export const WeatherCard: FC = () => {
                 Feels like:{' '}
                 {degreeType === 'celcius'
                   ? currentWeather.feels_like
-                  : (currentWeather.feels_like * 9) / 5 + 32}
+                  : celciusToFahrenheit(currentWeather.feels_like)}
                 {degreeType === 'celcius' ? (
                   <sup>&#8451;</sup>
                 ) : (
