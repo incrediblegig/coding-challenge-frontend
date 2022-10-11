@@ -27,12 +27,12 @@ export const LocationInput = () => {
     []
   );
 
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     debounceSearch(e.target.value);
   };
 
-  const onClickCity = (city: City) => {
+  const handleClickCity = (city: City) => {
     setValue(city.name);
     setLocation(city.name);
     setGeometry(city.lat, city.lng);
@@ -40,12 +40,12 @@ export const LocationInput = () => {
   };
 
   return (
-    <div className="sm:w-full lg:w-2/6 xl:max-w-2xl mb-8 relative">
+    <div className="sm:w-full lg:w-1/2 xl:max-w-2xl mb-8 relative">
       <input
         name="location"
         className="w-full bg-gradient-to-r from-[#0891b2] to-[#06b6d4] text-white rounded-xl outline-0 px-8 py-3"
         value={value}
-        onChange={onChangeInput}
+        onChange={handleChangeInput}
         placeholder="Search citites..."
         onFocus={() => setShowDropdown(true)}
         onBlur={() =>
@@ -64,7 +64,7 @@ export const LocationInput = () => {
                   <li
                     key={index}
                     className="py-1 cursor-pointer"
-                    onClick={() => onClickCity(city)}
+                    onClick={() => handleClickCity(city)}
                   >
                     {city.name}
                   </li>
