@@ -33,7 +33,7 @@ export const WeatherCard: FC = () => {
 
   return (
     <div
-      className={`sm:w-full lg:w-2/6 xl:max-w-2xl bg-light text-dark border border-dark md:border-none rounded-2xl shadow-lg ${getBackgroundColorClass(
+      className={`sm:w-full lg:w-1/2 xl:max-w-2xl bg-light text-dark border border-dark md:border-none rounded-2xl shadow-lg ${getBackgroundColorClass(
         currentWeather?.temp
       )} px-8 py-3 min-h-[70vh]`}
     >

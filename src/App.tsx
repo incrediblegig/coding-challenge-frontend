@@ -8,7 +8,7 @@ import { WeatherCard } from './containers/WeatherCard';
 function App() {
   return (
     <LocationContextProvider>
-      <div className="flex flex-col items-center mt-20">
+      <div className="flex flex-col items-center mt-20 px-8">
         <LocationInput />
         <WeatherCard />
       </div>
