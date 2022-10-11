@@ -38,7 +38,6 @@ npm install
 - Create .env file from .env.example and replace values with your own. It is okay to use default values if you don't have yours.
 
 ```
-GOOGLE_MAP_API_KEY=<Your Own Key>
 REACT_APP_OPENCAGE_API_KEY=<Your Own Key>
 REACT_APP_OPENWEATHER_API_KEY=<Your Own Key>
 REACT_APP_OPENCAGE_API=<Opencage api url>
